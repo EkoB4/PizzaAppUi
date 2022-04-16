@@ -37,7 +37,7 @@ struct ContentView: View {
                 .cornerRadius(12)
                 .padding(.horizontal,30)
                 .offset(x:10)
-              Spacer()
+                Spacer()
                 RoundedRectangle(cornerRadius: 10)
                     .frame(width:60,height: 60)
                     .padding()
@@ -47,8 +47,18 @@ struct ContentView: View {
                                 .offset(x:10)
                                 .frame(width:UIScreen.main.bounds.width/2 ,height: UIScreen.main.bounds.height/2)
                                 .offset(x:-38,y:-20))
-            }.padding(.vertical,50)
-            Spacer()
+            }.padding(.vertical,20)
+           // Spacer()
+            ScrollView(.horizontal,showsIndicators: false){
+            LazyHStack{
+                ForEach(0..<4){content in
+                    HStack{
+                            ButtonView()
+                        }
+                    }
+                } 
+            }
+            Spacer(minLength: UIScreen.main.bounds.height*0.4)
         }.background(Color.gray.opacity(0.4))
     }
 }

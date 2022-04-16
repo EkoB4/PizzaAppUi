@@ -39,14 +39,14 @@ struct MainScreenButtons : View {
             VStack{
                 ForEach(0..<10){index in
                     ScrollView(.horizontal, showsIndicators: false) {
-                        HStack{
-                            ForEach(0..<20) {index in
+                      //  HStack{
+                          //  ForEach(0..<20) {index in
                                 ButtonView()
-                            }
+                        //    }
                         }
                     }
                 }
             }
         }
     }
-}
+//}
