@@ -16,7 +16,7 @@ struct ContentView: View {
                 HStack{
                     TextField("sa", text: $userText)
                         .padding(.leading,40)
-                        .frame(width:UIScreen.main.bounds.width/1.5,height: UIScreen.main.bounds.height/12)
+                       .frame(width:UIScreen.main.bounds.width/1.5,height: UIScreen.main.bounds.height/12)
                 }
                 .overlay(
                     HStack{
@@ -39,7 +39,7 @@ struct ContentView: View {
                 .offset(x:10)
                 Spacer()
                 RoundedRectangle(cornerRadius: 10)
-                    .frame(width:60,height: 60)
+                    .frame(width:50,height: 50)
                     .padding()
                     .offset(x:-30,y:-18)
                     .overlay(Image(systemName: "gearshape.2.fill")
@@ -48,17 +48,24 @@ struct ContentView: View {
                                 .frame(width:UIScreen.main.bounds.width/2 ,height: UIScreen.main.bounds.height/2)
                                 .offset(x:-38,y:-20))
             }.padding(.vertical,20)
-           // Spacer()
+            HStack{
+            Text("Explore Categories")
+                    .font(.system(size:15))
+                    .bold()
+                    .padding(.vertical,-40)
+                    .offset(x:15)
+                Spacer(minLength: 5)
+            }
             ScrollView(.horizontal,showsIndicators: false){
             LazyHStack{
                 ForEach(0..<4){content in
                     HStack{
-                            ButtonView()
+                            ButtonView(PizzaText: "af")
                         }
                     }
                 } 
             }
-            Spacer(minLength: UIScreen.main.bounds.height*0.4)
+            Spacer(minLength: UIScreen.main.bounds.height*0.5)
         }.background(Color.gray.opacity(0.4))
     }
 }
